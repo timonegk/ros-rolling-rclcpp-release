@@ -1,8 +1,23 @@
-ros-rolling-rclcpp (16.0.1-1jammy.events) jammy; urgency=high
+ros-rolling-rclcpp (16.2.0-1jammy.events) jammy; urgency=high
 
   * Add EventsExecutor 
 
  -- Timon Engelke <debian@timonengelke.de>  Fri, 21 May 2022 01:20:19 +0200
+
+ros-rolling-rclcpp (16.2.0-1jammy) jammy; urgency=high
+
+  * Update get_parameter_from_event to follow the function description (#1922 <https://github.com/ros2/rclcpp/issues/1922>)
+  * Add 'best available' QoS enum values and methods (#1920 <https://github.com/ros2/rclcpp/issues/1920>)
+  * Contributors: Barry Xu, Jacob Perron
+
+ -- Ivan Paunovic <ivanpauno@ekumenlabs.com>  Tue, 03 May 2022 07:00:00 -0000
+
+ros-rolling-rclcpp (16.1.0-1jammy) jammy; urgency=high
+
+  * use reinterpret_cast for function pointer conversion. (#1919 <https://github.com/ros2/rclcpp/issues/1919>)
+  * Contributors: Tomoya Fujita
+
+ -- Ivan Paunovic <ivanpauno@ekumenlabs.com>  Fri, 29 Apr 2022 07:00:00 -0000
 
 ros-rolling-rclcpp (16.0.1-1jammy) jammy; urgency=high
 
