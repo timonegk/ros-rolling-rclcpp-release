@@ -1,5 +1,5 @@
-From: Timon <todo@todo.todo>
-Date: Fri, 20 May 2022 22:39:18 +0000
+From: Timon Engelke <timon.engelke@online.de>
+Date: Thu, 9 Jun 2022 12:09:15 +0200
 Subject: Add EventsExecutor
 
 ---
@@ -6545,7 +6545,7 @@ index 803d940..512defb 100644
  
      rmw_message_info_t msg_info;
 diff --git a/include/rclcpp/parameter_event_handler.hpp b/include/rclcpp/parameter_event_handler.hpp
-index c2ee55a..15436cb 100644
+index 52a0233..a7269ce 100644
 --- a/include/rclcpp/parameter_event_handler.hpp
 +++ b/include/rclcpp/parameter_event_handler.hpp
 @@ -52,7 +52,7 @@ struct ParameterEventCallbackHandle
@@ -6566,7 +6566,7 @@ index c2ee55a..15436cb 100644
          callbacks->event_callback(event);
        });
    }
-@@ -328,7 +328,7 @@ protected:
+@@ -329,7 +329,7 @@ protected:
      /// Callback for parameter events subscriptions.
      RCLCPP_PUBLIC
      void
@@ -6636,7 +6636,7 @@ index f21f27e..6f94f86 100644
    bool use_intra_process_;
    IntraProcessManagerWeakPtr weak_ipm_;
 diff --git a/include/rclcpp/timer.hpp b/include/rclcpp/timer.hpp
-index d55167e..dc86de9 100644
+index e31c9fe..f0e93c5 100644
 --- a/include/rclcpp/timer.hpp
 +++ b/include/rclcpp/timer.hpp
 @@ -121,6 +121,15 @@ public:
@@ -8018,10 +8018,10 @@ index 8be8364..2f6a37d 100644
    // Create the default callback group.
    using rclcpp::CallbackGroupType;
 diff --git a/src/rclcpp/parameter_event_handler.cpp b/src/rclcpp/parameter_event_handler.cpp
-index 6ba5266..15964d0 100644
+index b1b36b6..e317574 100644
 --- a/src/rclcpp/parameter_event_handler.cpp
 +++ b/src/rclcpp/parameter_event_handler.cpp
-@@ -158,13 +158,13 @@ ParameterEventHandler::get_parameters_from_event(
+@@ -162,13 +162,13 @@ ParameterEventHandler::get_parameters_from_event(
  }
  
  void
@@ -8132,7 +8132,7 @@ index 1fa2cbb..4d9f302 100644
    execute(std::shared_ptr<void> & data) override
    {
 diff --git a/test/rclcpp/test_parameter_event_handler.cpp b/test/rclcpp/test_parameter_event_handler.cpp
-index 9bdd96e..35b8706 100644
+index c80ca2f..84b3ba0 100644
 --- a/test/rclcpp/test_parameter_event_handler.cpp
 +++ b/test/rclcpp/test_parameter_event_handler.cpp
 @@ -27,9 +27,9 @@ public:
@@ -8147,7 +8147,7 @@ index 9bdd96e..35b8706 100644
    }
  
    size_t num_event_callbacks()
-@@ -264,20 +264,20 @@ TEST_F(TestNode, EventCallback)
+@@ -272,20 +272,20 @@ TEST_F(TestNode, EventCallback)
    double product;
    auto cb =
      [&int_param, &double_param, &product, &received,
@@ -8172,7 +8172,7 @@ index 9bdd96e..35b8706 100644
          double_param = p.get_value<double>();
        } catch (...) {
        }
-@@ -286,12 +286,12 @@ TEST_F(TestNode, EventCallback)
+@@ -294,12 +294,12 @@ TEST_F(TestNode, EventCallback)
      };
  
    auto cb2 =
@@ -8188,7 +8188,7 @@ index 9bdd96e..35b8706 100644
          {
            bool_param = p.get_value<bool>();
          }
-@@ -405,13 +405,13 @@ TEST_F(TestNode, LastInFirstCallForParameterEventCallbacks)
+@@ -413,13 +413,13 @@ TEST_F(TestNode, LastInFirstCallForParameterEventCallbacks)
    // The callbacks will log the current time for comparison purposes. Add a bit of a stall
    // to ensure that the time noted in the back-to-back calls isn't the same
    auto cb1 =
