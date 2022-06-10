@@ -1,3 +1,9 @@
+ros-rolling-rclcpp (16.2.0-1jammy.events1) jammy; urgency=high
+
+  * Drop wrong template specification
+
+ -- Timon Engelke <debian@timonengelke.de>  Fri, 10 Jun 2022 18:15:12 +0200
+
 ros-rolling-rclcpp (16.2.0-1jammy.events) jammy; urgency=high
 
   * Add EventsExecutor 
