@@ -1,0 +1,37 @@
+From: Timon Engelke <timon.engelke@online.de>
+Date: Fri, 10 Jun 2022 18:11:16 +0200
+Subject: Drop wrong template specification
+
+Origin: https://github.com/ros2/rclcpp/pull/1926
+Applied-Upstream: https://github.com/ros2/rclcpp/pull/1926
+---
+ include/rclcpp/publisher_options.hpp    | 2 +-
+ include/rclcpp/subscription_options.hpp | 2 +-
+ 2 files changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/include/rclcpp/publisher_options.hpp b/include/rclcpp/publisher_options.hpp
+index 4825030..3c88ebc 100644
+--- a/include/rclcpp/publisher_options.hpp
++++ b/include/rclcpp/publisher_options.hpp
+@@ -72,7 +72,7 @@ struct PublisherOptionsWithAllocator : public PublisherOptionsBase
+   /// Optional custom allocator.
+   std::shared_ptr<Allocator> allocator = nullptr;
+ 
+-  PublisherOptionsWithAllocator<Allocator>() {}
++  PublisherOptionsWithAllocator() {}
+ 
+   /// Constructor using base class as input.
+   explicit PublisherOptionsWithAllocator(const PublisherOptionsBase & publisher_options_base)
+diff --git a/include/rclcpp/subscription_options.hpp b/include/rclcpp/subscription_options.hpp
+index b6914ce..2b819da 100644
+--- a/include/rclcpp/subscription_options.hpp
++++ b/include/rclcpp/subscription_options.hpp
+@@ -97,7 +97,7 @@ struct SubscriptionOptionsWithAllocator : public SubscriptionOptionsBase
+   /// Optional custom allocator.
+   std::shared_ptr<Allocator> allocator = nullptr;
+ 
+-  SubscriptionOptionsWithAllocator<Allocator>() {}
++  SubscriptionOptionsWithAllocator() {}
+ 
+   /// Constructor using base class as input.
+   explicit SubscriptionOptionsWithAllocator(
